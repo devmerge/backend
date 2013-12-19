@@ -1,0 +1,39 @@
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+pids
+logs
+results
+
+
+*.sublime-workspace
+
+
+# Node
+npm-debug.log
+node_modules
+
+# Grunt
+intermediate/
+publish/
+
+# Stylus
+source/styles/*.css
+
+# Phantom
+tests/ghost/temp
