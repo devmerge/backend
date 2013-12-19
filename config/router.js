@@ -19,7 +19,6 @@ define([
 		.get('/checkins', Checkins.list)
 
 
-
 		.get('/info', function(req, res) {
 			res.send(process.env);
 		})
