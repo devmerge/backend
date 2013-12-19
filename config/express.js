@@ -1,8 +1,8 @@
 define([
-	'express', 'config/config.js', 'hbs',
+	'express', 'config/config.js',
 	'everyauth', 'utils/utils.js', 'cors'
 ], function(
-	express, config, hbs, everyauth, utils, cors
+	express, config, everyauth, utils, cors
 ) {
 	return function (app, config) {
 
