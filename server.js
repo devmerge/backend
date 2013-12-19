@@ -16,12 +16,12 @@ requirejs([
 	var app = express();
 	config.dirname = __dirname;
 
-	var models_path = __dirname + '/app/models';
-	fs.readdirSync(models_path).forEach(function (file) {
-		if (~file.indexOf('.js')) {
-			requirejs(models_path + '/' + file);
-		}
-	});
+	// var models_path = __dirname + '/app/models';
+	// fs.readdirSync(models_path).forEach(function (file) {
+	// 	if (~file.indexOf('.js')) {
+	// 		requirejs(models_path + '/' + file);
+	// 	}
+	// });
 
 	requirejs('config/everyauth')(app, config);
 	requirejs('config/express')(app, config);

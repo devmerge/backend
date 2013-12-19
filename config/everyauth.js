@@ -1,17 +1,18 @@
-define(['everyauth', 'mongoose'],
-function(everyauth, mongoose) {
+define(['everyauth', 'config/db'],
+function(everyauth, mongo) {
 	return function (app, config) {
 
-		var account = mongoose.model('Account');
+		// var account = mongoose.model('Account');
 
 		everyauth.facebook
 			.appId(config.fb.appId)
 			.appSecret(config.fb.appSecret)
 			.findUserById(function (userId, callback) {
-				console.log(userId, callback);
-				account.findOne({_id: id}, function (err, user) {
-					callback(user);
-				})
+				mongo(function (err, db) {
+					db.collections('account').findOne({_id: id}, function (err, user) {
+						callback(user);
+					});
+				});
 			})
 			.findOrCreateUser	( function (session, accessToken, accessTokenExtra, fbUserMetadata) {
 				if (fbUserMetadata.id === 1356227080) {
