@@ -10,7 +10,7 @@ define([
 			if (err) throw err;
 			db.collection('users').find().toArray(function (err, users) {
 				_.each(users, function (user) {
-					console.log(user);
+					// console.log(user);
 
 					if (!user.accessToken) return;
 
