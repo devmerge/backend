@@ -17,6 +17,7 @@
 		"requirejs": "",
 		"underscore": "",
 		"express": "",
+		"hbs": "",
 		"mongodb": "",
 		"moment": "",
 		"cron": "",
