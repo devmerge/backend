@@ -6,7 +6,7 @@ function (_, mongo, FB) {
 	Actions.list = function (req, res) {
 		mongo(function (err, db) {
 			if (err) throw err;
-			db.collection('checkins').find().toArray(function (err, checkins) {
+			db.collection('posts').find().toArray(function (err, checkins) {
 				if (err) throw err;
 
 				_.each(checkins, function (checkin) {
