@@ -7,7 +7,9 @@ define([
 
 	function Init () {
 		if (conf.PRODUCTION) {
-			mongodb.MongoClient.connect(conf.env.OPENSHIFT_MONGODB_DB_URL, function (err, db) {
+			mongodb.MongoClient.connect(
+				conf.env.OPENSHIFT_MONGODB_DB_URL + conf.env.OPENSHIFT_APP_NAME
+				, function (err, db) {
 				if (err) throw err;
 				DB = db;
 			});
