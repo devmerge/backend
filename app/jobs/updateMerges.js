@@ -40,7 +40,6 @@ define([
 							);
 						});
 
-						// filter out only with message contains #devmerge
 					});
 				});
 			});

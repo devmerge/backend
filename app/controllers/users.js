@@ -19,6 +19,12 @@ function (_, mongo, FB) {
 				if (err) throw err;
 
 				FB.setAccessToken(accessToken);
+				var extendToken = "https://graph.facebook.com/oauth/access_token?" +
+					"client_id=APP_ID&" +
+					"client_secret=APP_SECRET&" +
+					"grant_type=fb_exchange_token&" +
+					"fb_exchange_token=EXISTING_ACCESS_TOKEN";
+
 				FB.api('', 'post', {
 					batch: [
 						{ method: 'get', relative_url: 'me' }
@@ -50,7 +56,9 @@ function (_, mongo, FB) {
 								return false;
 							} else {
 								console.log('Inserted:', user);
-								res.send(200);
+								res.send({
+									"msg": "success"
+								});
 							}
 						}
 					);
