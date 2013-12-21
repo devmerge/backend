@@ -24,7 +24,8 @@
 		"async": "",
 		"nodemailer": "",
 		"cors": "",
-		"fb": ""
+		"fb": "",
+		"request": ""
 	},
 	"devDependencies": {},
 	"bundleDependencies": [],
