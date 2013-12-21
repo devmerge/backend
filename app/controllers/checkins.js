@@ -14,6 +14,12 @@ function (_, mongo, FB, moment) {
 
 		if (params.all) {
 			criteria = {};
+		} else if (params.since) {
+			criteria = {
+				"created_time": {
+					$gte: moment(params.since).utc().format()
+				}
+			}
 		}
 
 		mongo(function (err, db) {
