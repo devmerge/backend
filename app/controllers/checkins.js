@@ -4,6 +4,8 @@ function (_, mongo, FB) {
 	var Actions = {};
 
 	Actions.list = function (req, res) {
+		var params = req.query || {};
+
 		mongo(function (err, db) {
 			if (err) throw err;
 			db.collection('posts').find().toArray(function (err, checkins) {
