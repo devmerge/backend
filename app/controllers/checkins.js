@@ -26,9 +26,14 @@ function (_, mongo, FB, moment) {
 			if (err) throw err;
 			db.collection('posts').find(criteria).toArray(function (err, checkins) {
 				if (err) throw err;
-				_.each(checkins, function (checkin) {
-					// checkin = _.omit(checkin, 'secret', 'info');
+
+				_.each(checkins, function (checkin, id) {
+					checkins[id] = _.omit(checkin,
+						'_id', 'actions', 'privacy'
+					);
 				})
+
+
 				res.send(checkins);
 			});
 		});
