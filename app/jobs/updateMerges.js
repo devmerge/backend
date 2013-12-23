@@ -8,6 +8,10 @@ define([
 	Actions.run = function (options) {
 		mongo(function (err, db) {
 			if (err) throw err;
+			db.collection('posts').ensureIndex({created_time: 1}, function (err) {
+				if (err) throw err;
+			});
+
 			db.collection('users').find().toArray(function (err, users) {
 				_.each(users, function (user) {
 
